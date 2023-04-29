@@ -1,9 +1,0 @@
-{
-	"files.associations": {
-		"*.excalidraw": "json",
-		"*.excalidrawlib": "json",
-		"ft_printf.h": "c",
-		"climits": "c",
-		"limits.h": "c"
-	}
-}

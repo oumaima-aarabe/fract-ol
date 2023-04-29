@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 18:20:25 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/28 22:25:42 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/28 23:54:36 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,15 @@ typedef struct s_mlx
     void *window;
     void *img;
     int id;
+    int c;
     int *addr;
     int bpp;
     int ll;
     int endian;
     int iteration;
+    int lr;
+    int ud;
+    int color;
     double max_y;
     double min_y;
     double min_x;
@@ -55,14 +59,14 @@ void    ft_burning(t_mlx *m);
 void    ft_init(t_mlx *m);
 
 int close_win(void *param);
-int key_press(int keycode, void *param);
+int key_press(int keycode, t_mlx *m);
 int mouse_press(int button, int x, int y, t_mlx *m);
 
 double ft_atof(char *s);
 
-#define WIDTH 600
-#define HEIGHT 600
-#define MAXITER 85
+#define WIDTH 1080
+#define HEIGHT 1080
+#define MAXITER 150
 
 #define PR -0.8
 

@@ -5,63 +5,61 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/03/12 01:04:10 by ouaarabe          #+#    #+#              #
-#    Updated: 2023/04/11 23:12:20 by ouaarabe         ###   ########.fr        #
+#    Created: 2023/04/25 19:02:19 by ouaarabe          #+#    #+#              #
+#    Updated: 2023/04/28 22:38:57 by ouaarabe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FRACTOL		= fractol
+NAME = fractol
+NAME_B = fractol_bonus
 
-SRC_C	=	mandatory/client.c
-SRC_S	=	mandatory/server.c
-SRC_CB	=	bonus/client_bonus.c
-SRC_SB	=	bonus/server_bonus.c
+SRC	=	src/main.c\
+		src/mandelbrot.c\
+		src/julia.c\
+		src/draw.c\
+		src/tools.c\
+		src/tool2.c\
+		
+SRC_B	=	bonus/src_b/main.c\
+			bonus/src_b/mandelbrot.c\
+			bonus/src_b/burning_ship.c\
+			bonus/src_b/julia.c\
+			bonus/src_b/draw.c\
+			bonus/src_b/tools.c\
+			bonus/src_b/tool2.c\
 
-OBJ_S	=	mandatory/server.o
-OBJ_C	=	mandatory/client.o
-OBJ_SB	=	bonus/server_bonus.o
-OBJ_CB	=	bonus/client_bonus.o
+OBJ	=	${SRC:.c=.o}
 
-INC		=	mandatory/minitalk.h
-INC_B	=	bonus/minitalk_bonus.h
+OBJ_B	=	${SRC_B:.c=.o}
+
+
+INC		=	inc/fractol.h
+INC_B	=	bonus/inc_b/fractol.h
 
 CC			=	gcc
-CFLAG		=	-Wall -Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror
+# -fsanitize=address
 RM			=	rm -rf
 
-all: $(UTILS) $(CLIENT) $(SERVER)
+all: $(NAME)
 
-$(SERVER): $(OBJ_S) $(INC)
-	@ $(CC) $(CFLAGS) $(UTILS) -o $@ $(OBJ_S)
-
-$(CLIENT): $(OBJ_C) $(INC)
-	@ $(CC) $(CFLAGS) $(UTILS) -o $@ $(OBJ_C)
+$(NAME): $(OBJ) $(INC)
+	@ $(CC) $(CFLAGS) -lmlx -framework OpenGL -framework AppKit -o $@ $(OBJ)
 
 %.o: %.c
-	@ $(CC) $(CFLAGS) -c $< -o $@
-
-$(UTILS):
-	@ $(MAKE) -C $(UTILS_DIR)
+	@ $(CC) $(CFLAGS) -Ilmlx -c $< -o $@
 
 clean:
-	@ $(MAKE) clean -C $(UTILS_DIR)
-	@ $(RM) $(OBJ_C) $(OBJ_S)
-	@ $(RM) $(OBJ_CB) $(OBJ_SB)
+	@ $(RM) $(OBJ) $(OBJ_B)
 
 fclean: clean
-	@ $(MAKE) fclean -C $(UTILS_DIR)
-	@ $(RM) $(CLIENT) $(SERVER)
-	@ $(RM) $(CLIENT_B) $(SERVER_B)
+	@ $(RM) $(NAME)
 
 re: fclean all
 
-bonus: $(UTILS) $(CLIENT_B) $(SERVER_B)
+bonus: ${NAME_B}
 
-$(SERVER_B): $(OBJ_SB) $(INC_B)
-	@ $(CC) $(CFLAGS) $(UTILS) -o $@ $(OBJ_SB)
-
-$(CLIENT_B): $(OBJ_CB) $(INC_B)
-	@ $(CC) $(CFLAGS) $(UTILS) -o $@ $(OBJ_CB)
-
+${NAME_B} : ${OBJ_B} ${INC_B}
+	@ $(CC) $(CFLAGS) -lmlx -framework OpenGL -framework AppKit -o $@ $(OBJ_B)
 
 .PHONY: clean fclean re bonus
