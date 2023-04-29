@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 18:20:25 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/29 15:54:15 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/29 20:36:16 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void    choose_color(t_mlx *m);
 
 #define WIDTH 600
 #define HEIGHT 600
-#define MAXITER 250
+#define MAXITER 100
 
 #define PR -0.8
 

@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 19:52:15 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/29 16:05:44 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/29 20:45:44 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,6 @@ void    ft_burning(t_mlx *m)
 				z = tmp;
 				m->iteration++;
 			}
-			// if (m->iteration == MAXITER)
-			// 	color = 0x0f0000;
-			// else
-			// 	color = 0x0f0000 * m->iteration;
 				if (m->c == 1)
 			{
 				if (m->iteration == MAXITER)

@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 18:52:46 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/29 16:04:59 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/29 20:42:20 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,6 @@ void    ft_julia(t_mlx *m)
 				z = tmp;
 				m->iteration++;
 			}
-			// if (m->iteration == MAXITER)
-			// 	color = 0x00ffff;
-			// else
-			// 	color = 0x00000f * (m->iteration  * 70 + 1);
 			if (m->c == 1)
 			{
 				if (m->iteration == MAXITER)
@@ -72,6 +68,5 @@ void    ft_julia(t_mlx *m)
 		}
 		y++;
 	}
-			printf("%f ||| %f \n", c.r, c.i);
 	mlx_put_image_to_window(m->mlx, m->window, m->img, 0, 0);
 }
