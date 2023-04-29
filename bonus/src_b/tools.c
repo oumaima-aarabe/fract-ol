@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 19:24:56 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/28 23:37:50 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/29 16:18:14 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,31 @@ void    ft_init(t_mlx *m)
     m->lr = 0;
     m->ud = 0;
     m->c = 1;
-    m->color = 0x0f00d0;
+    choose_color(m);
+    
 }
+
+void    choose_color(t_mlx *m)
+{
+    if (m->c == 1)
+    {
+         if (m->id == 1)
+            m->color = 0x0f00d0;
+        else if(m->id ==4)
+            m->color = 0x0f0000;
+        else 
+            m->color = 0x0f00d0;
+    }
+    else if (m->c == 2)
+    {
+        if (m->id == 1)
+            m->color = 0xf2f0de;
+        else if(m->id ==4)
+            m->color = 0x00f0ff;
+        else 
+            m->color = 0x00ffff;
+    }
+}   
 
 double interpolate(double start, double end, double zoom)
 {
@@ -77,12 +100,14 @@ int key_press(int keycode, t_mlx *m)
     else if (keycode == 2)
     {
         m->c = 2;
-        m->color = 0xf2f0d5;
+        choose_color(m);
+        // m->color = 0xf2f0d5;
     }
     else if (keycode == 37)
     {
         m->c = 1;
-        m->color = 0x0f00d0;
+        choose_color(m);
+        // m->color = 0x0f00d0;
     }
     start_draw(m);
     return (0);

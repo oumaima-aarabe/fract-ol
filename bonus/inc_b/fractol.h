@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 18:20:25 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/28 23:54:36 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/29 15:54:15 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,11 @@ int key_press(int keycode, t_mlx *m);
 int mouse_press(int button, int x, int y, t_mlx *m);
 
 double ft_atof(char *s);
+void    choose_color(t_mlx *m);
 
-#define WIDTH 1080
-#define HEIGHT 1080
-#define MAXITER 150
+#define WIDTH 600
+#define HEIGHT 600
+#define MAXITER 250
 
 #define PR -0.8
 

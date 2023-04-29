@@ -6,7 +6,7 @@
 #    By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/25 19:02:19 by ouaarabe          #+#    #+#              #
-#    Updated: 2023/04/28 22:38:57 by ouaarabe         ###   ########.fr        #
+#    Updated: 2023/04/29 16:23:49 by ouaarabe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,8 +37,7 @@ INC		=	inc/fractol.h
 INC_B	=	bonus/inc_b/fractol.h
 
 CC			=	gcc
-CFLAGS		=	-Wall -Wextra -Werror
-# -fsanitize=address
+CFLAGS		=	-Wall -Wextra -Werror -fsanitize=address
 RM			=	rm -rf
 
 all: $(NAME)
@@ -53,7 +52,7 @@ clean:
 	@ $(RM) $(OBJ) $(OBJ_B)
 
 fclean: clean
-	@ $(RM) $(NAME)
+	@ $(RM) $(NAME) $(NAME_B)
 
 re: fclean all
 

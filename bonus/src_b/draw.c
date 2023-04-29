@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 18:33:24 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/28 22:46:02 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/29 16:22:37 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void    ft_draw(t_mlx *m)
 	start_draw(m);
 	mlx_hook(m->window, 4, 0, mouse_press, (void *)m);
 	mlx_hook(m->window, 17, 0, close_win, (void *)m);
-	mlx_hook(m->window, 3, 0, key_press, (void *)m);
+	mlx_hook(m->window, 2, 1L<<0, key_press, (void *)m);
 	
 	mlx_loop(m->mlx);
 }

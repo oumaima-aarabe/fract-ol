@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 19:52:15 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/28 22:59:45 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/29 16:05:44 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,24 @@ void    ft_burning(t_mlx *m)
 				z = tmp;
 				m->iteration++;
 			}
-			if (m->iteration == MAXITER)
-				color = 0x0f0000;
-			else
-				color = 0x0f0000 * m->iteration;
+			// if (m->iteration == MAXITER)
+			// 	color = 0x0f0000;
+			// else
+			// 	color = 0x0f0000 * m->iteration;
+				if (m->c == 1)
+			{
+				if (m->iteration == MAXITER)
+					color = m->color;
+				else
+					color = m->color * m->iteration;
+			}
+			else if (m->c == 2)
+			{
+				if (m->iteration == MAXITER)
+					color = m->color;
+				else
+					color = m->color * m->iteration;
+			}
 			my_mlx_pixel_put(m, x, y, color);
 			x++;
 		}

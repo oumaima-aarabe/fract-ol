@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 18:52:46 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/28 22:59:19 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/04/29 16:04:59 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,24 @@ void    ft_julia(t_mlx *m)
 				z = tmp;
 				m->iteration++;
 			}
-			if (m->iteration == MAXITER)
-				color = 0x00ffff;
-			else
-				color = 0x00000f * (m->iteration  * 70 + 1);
+			// if (m->iteration == MAXITER)
+			// 	color = 0x00ffff;
+			// else
+			// 	color = 0x00000f * (m->iteration  * 70 + 1);
+			if (m->c == 1)
+			{
+				if (m->iteration == MAXITER)
+					color = m->color;
+				else
+				color = m->color * m->iteration;
+			}
+			else if (m->c == 2)
+			{
+				if (m->iteration == MAXITER)
+					color = m->color;
+				else
+					color = m->color * (m->iteration * 70 + 1);
+			}
 			my_mlx_pixel_put(m, x, y, color);
 			x++;
 		}
