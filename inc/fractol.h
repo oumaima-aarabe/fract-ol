@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 18:20:25 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/28 22:25:42 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/01 22:22:08 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ void start_draw(t_mlx *m);
 void    ft_burning(t_mlx *m);
 void    ft_init(t_mlx *m);
 
-int close_win(void *param);
-int key_press(int keycode, void *param);
+int close_win(t_mlx *m);
+int key_press(int keycode, t_mlx *m);
 int mouse_press(int button, int x, int y, t_mlx *m);
 
 double ft_atof(char *s);

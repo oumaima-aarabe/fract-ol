@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 19:24:56 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/28 22:26:16 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/01 22:25:12 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,16 +50,17 @@ int mouse_press(int button, int x, int y, t_mlx *m)
     return(1);
 }
 
-int close_win(void *param)
+int close_win(t_mlx *m)
 {
-    (void)param;
+    mlx_destroy_image(m->mlx, m->img);
+	mlx_destroy_window(m->mlx, m->window);
+    free(m);
     exit(0);
 }
 
-int key_press(int keycode, void *param)
+int key_press(int keycode, t_mlx *m)
 {
-    (void)param;
     if (keycode == 53)
-        exit(0);
+        close_win(m);
     return (0);
 }

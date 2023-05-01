@@ -6,18 +6,37 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 18:51:16 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/28 13:55:06 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/01 22:32:09 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fractol.h"
 #include <stdio.h>
 
-void    ft_mandel(t_mlx *m)
+void	mandel_cal(t_mlx *m, int x, int y)
 {
 	t_complx	z;
 	t_complx	tmp;
 	t_complx	c;
+	
+	m->iteration = 1;
+	c.r =  m->min_x + x / (double)WIDTH * (m->max_x - m->min_x);
+	c.i =  m->min_y + y / (double)HEIGHT * (m->max_y - m->min_y) ;
+	z.r = 0.0;
+	z.i = 0.0;
+	tmp = z;
+	while (z.r * z.r + z.i * z.i < 4 && m->iteration < MAXITER)
+	{
+		tmp.r = z.r * z.r - z.i * z.i + c.r;
+		tmp.i = 2 * z.r * z.i + c.i;
+		z = tmp;
+		m->iteration++;
+	}
+	
+}
+
+void    ft_mandel(t_mlx *m)
+{
 	int		x;
 	int 	y;
 	int		color;
@@ -28,19 +47,7 @@ void    ft_mandel(t_mlx *m)
 		x = 0;
 		while (x < WIDTH)
 		{
-			m->iteration = 1;
-			c.r =  m->min_x + x / (double)WIDTH * (m->max_x - m->min_x);
-			c.i =  m->min_y + y / (double)HEIGHT * (m->max_y - m->min_y) ;
-			z.r = 0.0;
-			z.i = 0.0;
-			tmp = z;
-			while (z.r * z.r + z.i * z.i < 4 && m->iteration < MAXITER)
-			{
-				tmp.r = z.r * z.r - z.i * z.i + c.r;
-				tmp.i = 2 * z.r * z.i + c.i;
-				z = tmp;
-				m->iteration++;
-			}
+			mandel_cal(m, x, y);
 			if (m->iteration == MAXITER)
 				color = 0x0f000f;
 			else

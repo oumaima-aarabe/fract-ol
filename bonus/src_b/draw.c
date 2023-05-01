@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 18:33:24 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/29 16:22:37 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/01 21:47:39 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ void start_draw(t_mlx *m)
 		ft_julia(m);
 	else if (m->id == 4)
 		ft_burning(m);
-		
+	
+	
 	// mlx_put_image_to_window(m->mlx, m->window, m->img, 0, 0);
 }
 

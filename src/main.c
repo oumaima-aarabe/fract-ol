@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 18:16:07 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/29 20:57:02 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/01 22:20:35 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,17 @@ void    check_args(t_mlx *m, int argc, char **argv)
             m->id = 2;
     }
     else
+    {
+        free(m);
         exit(1);
+    }
 }
+
+
 int main(int argc, char **argv)
 {
     t_mlx *m;
-    
+    // atexit(ok);
     if(argc < 2)
         return (1);
     m = (t_mlx *)malloc(sizeof(t_mlx));

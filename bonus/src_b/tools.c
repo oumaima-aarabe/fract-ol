@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 19:24:56 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/04/29 16:18:14 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/01 22:24:39 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,16 +79,18 @@ int mouse_press(int button, int x, int y, t_mlx *m)
     return(1);
 }
 
-int close_win(void *param)
+int close_win(t_mlx *m)
 {
-    (void)param;
+	mlx_destroy_image(m->mlx, m->img);
+	mlx_destroy_window(m->mlx, m->window);
+    free(m);
     exit(0);
 }
 
 int key_press(int keycode, t_mlx *m)
 {
     if (keycode == 53)
-        exit(0);
+        close_win(m);
     else if (keycode == 123)
         m->lr -= 10;
     else if (keycode == 124)
@@ -101,13 +103,11 @@ int key_press(int keycode, t_mlx *m)
     {
         m->c = 2;
         choose_color(m);
-        // m->color = 0xf2f0d5;
     }
     else if (keycode == 37)
     {
         m->c = 1;
         choose_color(m);
-        // m->color = 0x0f00d0;
     }
     start_draw(m);
     return (0);
