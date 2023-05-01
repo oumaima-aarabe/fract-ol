@@ -6,19 +6,20 @@
 #    By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/25 19:02:19 by ouaarabe          #+#    #+#              #
-#    Updated: 2023/05/01 21:33:11 by ouaarabe         ###   ########.fr        #
+#    Updated: 2023/05/02 00:52:42 by ouaarabe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fractol
 NAME_B = fractol_bonus
 
-SRC	=	src/main.c\
-		src/mandelbrot.c\
-		src/julia.c\
-		src/draw.c\
-		src/tools.c\
-		src/tool2.c\
+SRC	=	mandatory/src/main.c\
+		mandatory/src/mandelbrot.c\
+		mandatory/src/julia.c\
+		mandatory/src/draw.c\
+		mandatory/src/tools.c\
+		mandatory/src/tool2.c\
+		mandatory/src_b/tool3.c\
 		
 SRC_B	=	bonus/src_b/main.c\
 			bonus/src_b/mandelbrot.c\
@@ -33,7 +34,7 @@ OBJ	=	${SRC:.c=.o}
 OBJ_B	=	${SRC_B:.c=.o}
 
 
-INC		=	inc/fractol.h
+INC		=	mandatory/inc/fractol.h
 INC_B	=	bonus/inc_b/fractol.h
 
 CC			=	gcc

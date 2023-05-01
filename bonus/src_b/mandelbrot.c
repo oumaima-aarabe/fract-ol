@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 18:51:16 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/05/01 22:38:03 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/02 00:42:11 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void	mandel_cal(t_mlx *m, int x, int y)
 	t_complx	z;
 	t_complx	tmp;
 	t_complx	c;
-	
+
 	m->iteration = 1;
-	c.r =  m->min_x + (x + m->lr) / (double)WIDTH * (m->max_x - m->min_x);
-	c.i =  m->min_y + (y + m->ud) / (double)HEIGHT * (m->max_y - m->min_y);
+	c.r = m->min_x + (x + m->lr) / (double)WIDTH * (m->max_x - m->min_x);
+	c.i = m->min_y + (y + m->ud) / (double)HEIGHT * (m->max_y - m->min_y);
 	z.r = 0.0;
 	z.i = 0.0;
 	tmp = z;
@@ -33,9 +33,8 @@ void	mandel_cal(t_mlx *m, int x, int y)
 	}
 }
 
-void coloring(t_mlx *m, int *color)
+void	coloring(t_mlx *m, int *color)
 {
-	
 	if (m->c == 1)
 	{
 		if (m->iteration == MAXITER)
@@ -51,12 +50,13 @@ void coloring(t_mlx *m, int *color)
 			*color = m->color * m->iteration;
 	}
 }
-void    ft_mandel(t_mlx *m)
+
+void	ft_mandel(t_mlx *m)
 {
 	int		x;
-	int 	y;
-	int color;
-	
+	int		y;
+	int		color;
+
 	y = 0;
 	while (y < HEIGHT)
 	{

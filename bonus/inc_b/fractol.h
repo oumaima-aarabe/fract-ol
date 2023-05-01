@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 18:20:25 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/05/01 23:00:48 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/02 00:08:45 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,14 @@ typedef struct s_mlx
 
 typedef struct s_complx
 {
-	double  r;
-	double  i;
+	double	r;
+	double	i;
 }t_complx;
 
 void	my_mlx_pixel_put(t_mlx *m, int x, int y, int color);
-void 	ft_draw(t_mlx *m);
-void 	ft_mandel(t_mlx *m);
-void 	ft_julia(t_mlx *mlx);
+void	ft_draw(t_mlx *m);
+void	ft_mandel(t_mlx *m);
+void	ft_julia(t_mlx *mlx);
 void	start_draw(t_mlx *m);
 void	ft_burning(t_mlx *m);
 void	ft_init(t_mlx *m);

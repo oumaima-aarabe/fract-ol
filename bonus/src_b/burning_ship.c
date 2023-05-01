@@ -6,22 +6,22 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 19:52:15 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/05/01 22:51:46 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/02 00:38:49 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc_b/fractol.h"
 #include <stdio.h>
 
-void burning_cal(t_mlx *m, int x, int y)
+void	burning_cal(t_mlx *m, int x, int y)
 {
 	t_complx	z;
 	t_complx	tmp;
 	t_complx	c;
-	
+
 	m->iteration = 1;
-	c.r =  m->min_x + (x + m->lr) / (double)WIDTH * (m->max_x - m->min_x);
-	c.i =  m->min_y + (y + m->ud) / (double)HEIGHT * (m->max_y - m->min_y);
+	c.r = m->min_x + (x + m->lr) / (double)WIDTH * (m->max_x - m->min_x);
+	c.i = m->min_y + (y + m->ud) / (double)HEIGHT * (m->max_y - m->min_y);
 	z.r = 0.0;
 	z.i = 0.0;
 	tmp = z;
@@ -34,7 +34,7 @@ void burning_cal(t_mlx *m, int x, int y)
 	}
 }
 
-void b_coloring(t_mlx *m, int *color)
+void	b_coloring(t_mlx *m, int *color)
 {
 	if (m->c == 1)
 	{
@@ -52,10 +52,10 @@ void b_coloring(t_mlx *m, int *color)
 	}
 }
 
-void    ft_burning(t_mlx *m)
+void	ft_burning(t_mlx *m)
 {
 	int		x;
-	int 	y;
+	int		y;
 	int		color;
 
 	y = 0;

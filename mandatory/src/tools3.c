@@ -1,16 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   tools3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 07:36:23 by ouaarabe          #+#    #+#             */
-/*   Updated: 2022/11/11 10:55:38 by ouaarabe         ###   ########.fr       */
+/*   Created: 2022/10/13 23:20:30 by ouaarabe          #+#    #+#             */
+/*   Updated: 2023/05/02 00:33:16 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include"../inc/fractol.h"
+
+size_t	ft_strlen(const	char *s)
+{
+	const char	*c;
+
+	c = s;
+	while (*c)
+		c++;
+	return ((size_t)(c - s));
+}
+
+void	ft_putendl_fd(char *s, int fd)
+{
+	if (!s)
+		return ;
+	write (fd, s, ft_strlen(s));
+	write (fd, "\n", 1);
+}
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

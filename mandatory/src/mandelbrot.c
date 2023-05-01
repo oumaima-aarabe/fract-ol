@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   julia.c                                            :+:      :+:    :+:   */
+/*   mandelbrot.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/25 18:52:46 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/05/01 22:42:15 by ouaarabe         ###   ########.fr       */
+/*   Created: 2023/04/25 18:51:16 by ouaarabe          #+#    #+#             */
+/*   Updated: 2023/05/02 00:22:37 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fractol.h"
+#include <stdio.h>
 
-void julia_cal(t_mlx *m, int x, int y)
+void	mandel_cal(t_mlx *m, int x, int y)
 {
-    t_complx	z;
+	t_complx	z;
 	t_complx	tmp;
 	t_complx	c;
-	
+
 	m->iteration = 1;
-	z.r =  m->min_x + x / (double)WIDTH * (m->max_x - m->min_x);
-	z.i =  m->min_y + y / (double)HEIGHT * (m->max_y - m->min_y);
-	if (m->id == 3)
-	{
-		c.r = m->r;
-		c.i = m->i;
-	}
-	else
-	{
-		c.r = PR;
-		c.i = PI;
-	}
+	c.r = m->min_x + x / (double)WIDTH * (m->max_x - m->min_x);
+	c.i = m->min_y + y / (double)HEIGHT * (m->max_y - m->min_y);
+	z.r = 0.0;
+	z.i = 0.0;
 	tmp = z;
 	while (z.r * z.r + z.i * z.i < 4 && m->iteration < MAXITER)
 	{
@@ -41,10 +34,10 @@ void julia_cal(t_mlx *m, int x, int y)
 	}
 }
 
-void    ft_julia(t_mlx *m)
+void	ft_mandel(t_mlx *m)
 {
 	int		x;
-	int 	y;
+	int		y;
 	int		color;
 
 	y = 0;
@@ -53,11 +46,11 @@ void    ft_julia(t_mlx *m)
 		x = 0;
 		while (x < WIDTH)
 		{
-			julia_cal(m, x, y);
+			mandel_cal(m, x, y);
 			if (m->iteration == MAXITER)
-				color = 0x00ffff;
+				color = 0x0f000f;
 			else
-				color = 0x00000f * (m->iteration  * 70 + 1);
+				color = 0x0f00d0 * m->iteration;
 			my_mlx_pixel_put(m, x, y, color);
 			x++;
 		}
