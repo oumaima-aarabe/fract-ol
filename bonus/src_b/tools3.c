@@ -6,11 +6,11 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 23:20:30 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/05/02 15:30:45 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/02 15:54:44 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../inc/fractol.h"
+#include"../inc_b/fractol.h"
 
 size_t	ft_strlen(const	char *s)
 {
@@ -26,8 +26,8 @@ void	ft_putendl_fd(char *s, int fd)
 {
 	if (!s)
 		return ;
-	write(fd, s, ft_strlen(s));
-	write(fd, "\n", 1);
+	write (fd, s, ft_strlen(s));
+	write (fd, "\n", 1);
 }
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)

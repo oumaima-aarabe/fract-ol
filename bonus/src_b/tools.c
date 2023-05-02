@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 19:24:56 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/05/02 00:58:11 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/02 15:13:10 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,38 +44,6 @@ void	choose_color(t_mlx *m)
 		else
 			m->color = 0x00ffff;
 	}
-}
-
-double	interpolate(double start, double end, double zoom)
-{
-	return (start + ((end - start) * zoom));
-}
-
-void	applyzoom(t_mlx *m, double mouse_re, double mouse_im, double zoom)
-{
-	m->min_x = interpolate(mouse_re, m->min_x, zoom);
-	m->min_y = interpolate(mouse_im, m->min_y, zoom);
-	m->max_x = interpolate(mouse_re, m->max_x, zoom);
-	m->max_y = interpolate(mouse_im, m->max_y, zoom);
-}
-
-int	mouse_press(int button, int x, int y, t_mlx *m)
-{
-	double	mouse_re;
-	double	mouse_im;
-	double	zoom;
-
-	zoom = 1.0;
-	mouse_re = (double)x / (WIDTH / (m->max_x - m->min_x)) + m->min_x;
-	mouse_im = (double)y / (HEIGHT / (m->max_y - m->min_y)) + m->min_y;
-	if (button == 4)
-		zoom = 0.9;
-	else if (button == 5)
-		zoom = 1.1;
-	if (button == 4 || button == 5)
-		applyzoom(m, mouse_re, mouse_im, zoom);
-	start_draw(m);
-	return (1);
 }
 
 int	close_win(t_mlx *m)

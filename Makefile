@@ -6,7 +6,7 @@
 #    By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/25 19:02:19 by ouaarabe          #+#    #+#              #
-#    Updated: 2023/05/02 00:52:42 by ouaarabe         ###   ########.fr        #
+#    Updated: 2023/05/02 16:43:35 by ouaarabe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ SRC	=	mandatory/src/main.c\
 		mandatory/src/draw.c\
 		mandatory/src/tools.c\
 		mandatory/src/tool2.c\
-		mandatory/src_b/tool3.c\
+		mandatory/src/tools3.c\
+		mandatory/src/help_msg.c\
 		
 SRC_B	=	bonus/src_b/main.c\
 			bonus/src_b/mandelbrot.c\
@@ -28,6 +29,9 @@ SRC_B	=	bonus/src_b/main.c\
 			bonus/src_b/draw.c\
 			bonus/src_b/tools.c\
 			bonus/src_b/tool2.c\
+			bonus/src_b/tools3.c\
+			bonus/src_b/tools4.c\
+			bonus/src_b/help_msg.c\
 
 OBJ	=	${SRC:.c=.o}
 

@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 19:10:06 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/05/02 00:43:23 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/02 16:37:24 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,25 @@ double	ft_atof(char *s)
 		i++;
 	result = calcul(s, i);
 	return (sign * result);
+}
+
+int	num_check(char *str)
+{
+	size_t	i;
+	int		dot_count;
+
+	i = 0;
+	dot_count = 0;
+	if (str[i + 1] && (str[i] == '+' || str[i] == '-'))
+		i++;
+	while (str[i] && (ft_isdigit(str[i]) || str[i] == '.'))
+	{
+		if (str[i] == '.')
+			dot_count++;
+		i++;
+	}
+	if (dot_count != 1 || i != ft_strlen(str))
+		return (0);
+	else
+		return (1);
 }
