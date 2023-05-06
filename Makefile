@@ -6,7 +6,7 @@
 #    By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/25 19:02:19 by ouaarabe          #+#    #+#              #
-#    Updated: 2023/05/02 16:43:35 by ouaarabe         ###   ########.fr        #
+#    Updated: 2023/05/06 00:08:41 by ouaarabe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,7 @@ all: $(NAME)
 $(NAME): $(OBJ) $(INC)
 	@ $(CC) $(CFLAGS) -lmlx -framework OpenGL -framework AppKit -o $@ $(OBJ)
 
-%.o: %.c
+%.o: %.c $(INC)
 	@ $(CC) $(CFLAGS) -Ilmlx -c $< -o $@
 
 clean:
