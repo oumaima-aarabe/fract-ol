@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 19:10:06 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/05/02 16:37:24 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/07 21:30:03 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_isspace(char c)
 	return (c == ' ');
 }
 
-int	calcul(char *s, int i)
+double	calcul(char *s, int i)
 {	
 	double	val;
 	double	power;
@@ -47,9 +47,9 @@ int	calcul(char *s, int i)
 
 double	ft_atof(char *s)
 {
-	int		sign;
-	int		i;
-	int		result;
+	int			sign;
+	int			i;
+	double		result;
 
 	i = 0;
 	sign = 1;

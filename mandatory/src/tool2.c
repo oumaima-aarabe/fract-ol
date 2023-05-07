@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 19:10:06 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/05/06 19:12:36 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/07 21:31:22 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ double	ft_atof(char *s)
 	if (s[i] == '+' || s[i] == '-')
 		i++;
 	result = calcul(s, i);
-	printf("atof :%f", result);
 	return (sign * result);
 }
 

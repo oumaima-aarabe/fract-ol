@@ -6,7 +6,7 @@
 #    By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/25 19:02:19 by ouaarabe          #+#    #+#              #
-#    Updated: 2023/05/06 00:08:41 by ouaarabe         ###   ########.fr        #
+#    Updated: 2023/05/07 21:32:51 by ouaarabe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ INC		=	mandatory/inc/fractol.h
 INC_B	=	bonus/inc_b/fractol.h
 
 CC			=	gcc
-CFLAGS		=	-Wall -Wextra -Werror -Ofast #-fsanitize=address
+CFLAGS		=	-Wall -Wextra -Werror -Ofast
 RM			=	rm -rf
 
 all: $(NAME)

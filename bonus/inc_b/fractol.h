@@ -6,7 +6,7 @@
 /*   By: ouaarabe <ouaarabe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 18:20:25 by ouaarabe          #+#    #+#             */
-/*   Updated: 2023/05/02 16:28:11 by ouaarabe         ###   ########.fr       */
+/*   Updated: 2023/05/07 21:28:23 by ouaarabe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ size_t	ft_strlen(const	char *s);
 
 # define WIDTH 600 
 # define HEIGHT 600
-# define MAXITER 100
+# define MAXITER 80
 # define PR -0.8
 # define PI -0.156
 
